@@ -48,7 +48,7 @@
               <ul class="nav navbar-nav navbar-right navbar-border">
                 <li class="active"><a href="#main-header">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="/viewblogs">BLOGS</a></li>
                 <li><a href="#testimonial">Testimonial</a></li>
                 <li><a href="#contact">Contact Us</a></li>
               </ul>

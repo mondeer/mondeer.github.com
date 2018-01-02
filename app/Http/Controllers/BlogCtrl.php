@@ -20,14 +20,14 @@ class BlogCtrl extends Controller
     $blog->content = $request->input('content');
     $blog->save();
 
-    return redirect('/blogcreate');
+    return redirect('/viewblogs');
 
   }
 
   public function show() {
   $blogs = Blog::all();
 
-  return view('myblogs')->with('blogs', $blogs);
+  return view('viewblogs')->with('blogs', $blogs);
   }
 
   public function showblog($id) {

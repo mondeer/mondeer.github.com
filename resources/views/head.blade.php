@@ -89,7 +89,7 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="/imondblogview">
+                                    <a href="/viewblogs">
                                         View Blogs
                                     </a>
                                 </li>

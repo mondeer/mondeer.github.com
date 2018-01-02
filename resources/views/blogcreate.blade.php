@@ -4,7 +4,7 @@
 <div class="row imondgray">
   <div class="col-md-12">
     <h1>Hi {{ Auth::user()->name }}, Create a new blog</h1>
-    <form class="form-horizontal" action="/kalyablog" method="post">
+    <form class="form-horizontal" action="/newblog" method="post">
       {{csrf_field()}}
       <div class="form-group">
         <label class="col-sm-2 control-label">Title</label>
