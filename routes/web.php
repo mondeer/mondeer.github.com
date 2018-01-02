@@ -5,3 +5,9 @@ Route::get('/', function () {
 });
 
 Route::post('/hire/imond', 'HireCtrl@hire');
+
+Route::get('/newblog', 'BlogCtrl@create');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
