@@ -1,23 +1,43 @@
-@extends('head')
+@extends('blog.index')
 
 @section('content')
-  <div class="row">
-    <hr>
-    <div class="col-md-3">
-      <h2>  Blogs ({{$blogs->count()}})</h2>
-    </div>
-    <div class="col-md-6">
-      @foreach($blogs as $blog)
-            <div class="col-sm-12" style="color:black; font-size:12; ">
-                <h1><a href="/viewblog/{{$blog->id}}">{{$blog->title}}</h1>
-                <em style="color:gray; ">Created by {{$blog->author}}</em><br>
-                <p class="imondblack">{!! str_limit($blog->content, $limit = 150, $end = "...") !!}</p>
-                <p> Created: {{$blog->created_at->diffForHumans()}}</p>
-                {{ Carbon\Carbon::parse($blog->created_at)->format('d-m-Y') }}</a>
+<div class="row">
 
-                <hr>
-            </div>
-        @endforeach
-    </div>
-  </div>
+
+      <div class="sub-title">
+        <h2>iMond Solutions</h2>
+          <a href="contact.html"><i class="icon-envelope"></i></a>
+       </div>
+
+
+      <div class="col-md-12 content-page">
+        @if($blogs->count()==0)
+          <div class="post-info">
+            <h1>No Blogs</h1>
+          </div>
+        @endif
+
+          <!-- Blog Post Start -->
+          @foreach($blogs as $blog)
+          <div class="col-md-12 blog-post">
+              <div class="post-title">
+                <a href="/viewblog/{{ $blog->id }}"><h1>{{ $blog->title }}</h1></a>
+              </div>
+              <div class="post-info">
+                <span>{{$blog->created_at->diffForHumans()}}/ by <a href="#" target="_blank">{{ $blog->author }}</a></span>
+              </div>
+              <p>{!! str_limit($blog->content, $limit = 350, $end = "...") !!}</p>
+              <a href="/viewblog/{{ $blog->id }}" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+          </div>
+          @endforeach
+          <!-- Blog Post End -->
+
+          <div class="col-md-12 text-center">
+           <a href="javascript:void(0)" id="load-more-post" class="load-more-button">Load</a>
+           <div id="post-end-message"></div>
+          </div>
+
+       </div>
+
+   </div>
 @endsection

@@ -10,7 +10,7 @@ Route::get('/newblog', 'BlogCtrl@create');
 
 Route::post('/newblog', 'BlogCtrl@postCreate');
 
-Route::get('/viewblogs', 'BlogCtrl@show');
+Route::get('/imondblog', 'BlogCtrl@show');
 
 Route::get('/viewblog/{id}', array('as'=>'viewblog', 'uses'=>'BlogCtrl@showblog'));
 
